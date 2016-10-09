@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#My controller
+#GET /findAll                        controllers.MyController.findAll
+
+
+#RESTful Page
+
+GET     /api/user       controllers.RESTfulController.index
+GET     /api/user/:id   controllers.RESTfulController.read(id: String)
+POST    /api/user       controllers.RESTfulController.create
+DELETE  /api/user/:id   controllers.RESTfulController.delete(id: String)
+PATCH   /api/user/:id   controllers.RESTfulController.update(id: String)
+
